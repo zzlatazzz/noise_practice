@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>Загрузка файлов</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+  <div align="center">
+    <header class="header">
+      <div class="header_wrapper">
+        <br>
+      </div>
+    </header>
+    <br>
+    <h1>Загрузка файлов</h1>
+    <div>
+        <p>
+            Выберите два файла на компьютере <br> *_mic.* для записи ближнего микрофона и *_lpb.* для записи дальнего микрофона <br> и нажмите кнопку загрузки.
+        </p>
+    </div>
+    <form method="POST" action="" enctype="multipart/form-data">
+      <p>
+        <div class="custom-file-upload">
+          <div class="form-group">
+            <label class="label">
+              <i class="material-icons">attach_file</i>
+              <span class="title">Добавить файл</span>
+              <input type="file" name="file" multiple>
+            </label>
+          </div>
+        </div>
+      </p>
+      <p><input type="submit" value="Загрузить"></p>
+
+    </form>
+  </div>
+
+  <div>
+    <p>Загруженные файлы:</p>
+    {% if filenames %}
+      {{ filenames }}
+    {% endif %}
+  </div>
+  <div>
+    <p><a class="btn" href="/clean"><input type="submit" value="Удалить записи"></a></p>
+  </div>
+  <div>
+    <p><a class="btn" href="/output"><input type="submit" value="Обработать записи"></a></p>
+  </div>
+  </body>
+</html>
